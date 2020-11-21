@@ -58,6 +58,9 @@ public class TemplateTest {
 
         WebDriverWait wait = new WebDriverWait(driver, 60);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("customer_firstname")));
+        
+        WebElement searchField3 = driver.findElement(By.id("customer_firstname"));
+        searchField3.sendKeys("Jana");
 
         WebElement searchField3 = driver.findElement(By.id("customer_lastname"));
         searchField3.sendKeys("Nová");
