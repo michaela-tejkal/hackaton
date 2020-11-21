@@ -97,11 +97,14 @@ public class TemplateTest {
         WebElement searchButton3 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div[3]/div/div[2]/div/div[1]/div[1]/div/div[3]/a/span"));
         searchButton3.click();
 
-        WebElement searchField = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[2]/div[1]/div/form/div[2]/div[1]/label"));
-        System.out.println("Check-in: " + searchField.isEnabled());
-        WebElement searchField2 = driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[2]/div[1]/div/form/div[2]/div[2]/label"));
-        System.out.println("check-out: " + searchField2.isEnabled());
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[1]/div[2]/div/div[2]/div/div/div/div[2]/div[1]/div/form/div[2]/div[1]/label")));
 
+        WebElement searchField = driver.findElement(By.className(""));
+        System.out.println("Check-in: " + searchField.isDisplayed());
+        WebElement searchField2 = driver.findElement(By.xpath("html/body/div[1]/div[2]/div/div[2]/div/div/div/div[2]/div[1]/div/form/div[2]/div[1]/label"));
+        System.out.println("check-out: " + searchField2.isDisplayed());
+        
     }
 
     @Test
